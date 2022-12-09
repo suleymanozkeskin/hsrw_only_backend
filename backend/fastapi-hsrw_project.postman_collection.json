@@ -1,0 +1,951 @@
+{
+	"info": {
+		"_postman_id": "a2f68c12-8cbc-40a3-b66d-7a269fb31e29",
+		"name": "fastapi-hsrw_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22771486"
+	},
+	"item": [
+		{
+			"name": "Forum_Posts",
+			"item": [
+				{
+					"name": "Get Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts",
+							"host": [
+								"{{URL}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All likes/dislikes of a post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/9/likes",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"9",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(NOT WORKING)Get All Posts That A User Liked",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/liked",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"liked"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOSwiZXhwIjoxNjYxNzgwNjgwfQ.dBQXBbVDXSvolE8qmkJehw4WgJVC04X5aLkOaoDav5U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"fghgfh\",\r\n    \"content\": \"12312321\",\r\n    \"published\": true\r\n   \r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posts",
+							"host": [
+								"{{URL}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like A Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOSwiZXhwIjoxNjYxNzgwNjgwfQ.dBQXBbVDXSvolE8qmkJehw4WgJVC04X5aLkOaoDav5U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"a galaxy\",\r\n    \"content\": \"milkyway\",\r\n    \"published\": true\r\n   \r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posts/10/like",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"10",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dislike A Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxOSwiZXhwIjoxNjYxNzgwNjgwfQ.dBQXBbVDXSvolE8qmkJehw4WgJVC04X5aLkOaoDav5U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"a galaxy\",\r\n    \"content\": \"milkyway\",\r\n    \"published\": true\r\n   \r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posts/5/dislike",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"5",
+								"dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/5",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(NOT WORKING)Unlike A Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/7/like",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"7",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(NOT WORKING)Undislike A Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/5/dislike",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"5",
+								"dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"xxx\", \r\n    \"content\": \"yyy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}posts/11",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts/11",
+							"host": [
+								"{{URL}}posts"
+							],
+							"path": [
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQLAlchemy Test Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}posts",
+							"host": [
+								"{{URL}}posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event_Posts",
+			"item": [
+				{
+					"name": "Create Event Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"title\":\"freshers meeting vol 3 \",\r\n    \"content\": \"concerts at uni\",\r\n    \"date\":\"17.05.2023\",\r\n    \"organizer_name\": \"HSRW\",\r\n    \"image_url\": \"random_url\",\r\n    \"image_url_type\": \"random_url_type\"\r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}event_posts",
+							"host": [
+								"{{URL}}event_posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}event_posts",
+							"host": [
+								"{{URL}}event_posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pub-Crawling\",\r\n    \"content\": \"Freshers will be crawling through the selected bars in Kleve City. To get your tickets please click on this link: www.hsrw-students-collective.com/event_id/5/buy_ticket \",\r\n    \"date\": \"22.09.2022\",\r\n    \"organizer_name\": \"Asta HSRW\",\r\n    \"image_url\": \"random_image_url\",\r\n    \"image_url_type\": \"random_image_url_type\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}event_posts/5",
+							"host": [
+								"{{URL}}event_posts"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}event_posts/4",
+							"host": [
+								"{{URL}}event_posts"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Be_A_Tutor",
+			"item": [
+				{
+					"name": "Create Tutor Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"profile_title\": \"Available tutor with experience.\",\r\n    \"profile_explanation\": \"I can be your tutor for the following classes: Physics \",\r\n    \"faculty_name\": \"Technology and Bionics\",\r\n    \"tutor_gpa\": \"1.0\",\r\n    \"hourly_rate\": \"18\",\r\n    \"email\": \"John4.Doe@hsrw.org\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}tutor_profile",
+							"host": [
+								"{{URL}}tutor_profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of Employers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}employer_list",
+							"host": [
+								"{{URL}}employer_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tutor Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile_title\": \"UPDATED Available tutor with experience.\",\r\n    \"profile_explanation\": \"I can be your tutor for the following classes: Programming, Intro Math, Statics and Strength of Materials, Internal Accounting  \",\r\n    \"faculty_name\": \"Technology and Bionics\",\r\n    \"tutor_gpa\": \"1.3\",\r\n    \"hourly_rate\": \"17.6\",\r\n    \"email\": \"John4.Doe@hsrw.org\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}tutor_profile/5",
+							"host": [
+								"{{URL}}tutor_profile"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of Employers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}employer_list",
+							"host": [
+								"{{URL}}employer_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tutor Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}tutor_profile/7",
+							"host": [
+								"{{URL}}tutor_profile"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hire_A_Tutor",
+			"item": [
+				{
+					"name": "Get Single Tutor Profile by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}tutor_profile/7",
+							"host": [
+								"{{URL}}tutor_profile"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A List Of Tutors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}tutor_list",
+							"host": [
+								"{{URL}}tutor_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tutor Hiring Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"post_title\": \"Tutor needed for Power and Electronics\",\r\n    \"post_content\": \"I need someone who can be my tutor for at least 2 hours per week throughout this winter semester.\",\r\n    \"employer_email\": \"John12.Doe@hsrw.org\"\r\n\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}hire_tutor_posts",
+							"host": [
+								"{{URL}}hire_tutor_posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tutor Hiring  Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_title\": \"Tutor needed for Applied Math\",\r\n    \"post_content\": \"I need someone who can be my tutor for at least 4 hours per week throughout this winter semester.\",\r\n    \"employer_email\": \"John12.Doe@hsrw.org\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}hire_tutor_posts/7",
+							"host": [
+								"{{URL}}hire_tutor_posts"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tutor Hiring Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}hire_tutor_posts/5",
+							"host": [
+								"{{URL}}hire_tutor_posts"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John12.Doe@hsrw.org\",\r\n    \"password\": \"a_password_to_be_hashed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "John4.Doe@hsrw.org",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "a_password_to_be_hashed",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}login",
+							"host": [
+								"{{URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/7",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
